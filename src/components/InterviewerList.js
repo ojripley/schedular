@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import InterviewerListItem from './InterviewerListItem';
 
@@ -6,12 +6,10 @@ import 'components/InterviewerList.scss';
 
 export default function InterviewerList(props) {
 
-  // [interviewer, setInterviewer] = useState('3');
-
   const interviewers = props.interviewers.map(interviewer => 
     <InterviewerListItem
       key={interviewer.id}
-      // id={interviewer.id}
+      id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
       selected={props.value === interviewer.id}
