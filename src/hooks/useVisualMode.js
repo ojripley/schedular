@@ -8,18 +8,27 @@ export default function useVisualMode(initial) {
   return {
     mode,
     transition(newMode, replace = false) {
-      if (!replace) {
+      console.log(newMode);
+      setHistory((prev) => {
+        if (replace) {
+          prev.pop();
+        }
         setMode(newMode);
-        setHistory(prev => ([...prev, mode]));
-      } else {
-        setMode(newMode);
-        setHistory(prev => ([...prev, history[0]]));
-      }
+        return [...prev, newMode];
+      });
     },
     back() {
-      if (history.length > 1){
-        setMode(history.pop());
+      // console.log(history[history.length - 1]);
+      if (history.length > 1) {
+        setHistory((prev) => {
+          console.log(prev[prev.length - 1]);
+          prev.pop();
+          console.log(prev[prev.length - 1]);
+          setMode(prev[prev.length - 1]);
+          return prev;
+        });
       } else {
+        console.log(history[0]);
         setMode(history[0]);
       }
     }
