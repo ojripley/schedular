@@ -17,12 +17,6 @@ export default function(){
         return { ...state, ...action.value }
       case SET_APPOINTMENTS: {
 
-        // if (!action.value.interview === null) {
-
-        // } else {
-
-        // }
-
         const appointment = {
           ...state.appointments[action.value.id],
           interview: action.value.interview && { ...action.value.interview }
@@ -115,10 +109,10 @@ export default function(){
       interview: { ...interview }
     };
 
-    const appointments = {
-      ...state.appointments,
-      [id]: appointment
-    };
+    // const appointments = {
+    //   ...state.appointments,
+    //   [id]: appointment
+    // };
 
     // dispatch({ type: SET_APPOINTMENTS, value: appointments });
 
