@@ -13,6 +13,8 @@ import useApplicationData from 'hooks/useApplicationData';
 
 export default function Application(props) {
 
+  console.log(useApplicationData());
+
   const {
     state,
     setDay,
