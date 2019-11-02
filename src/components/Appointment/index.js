@@ -29,22 +29,27 @@ export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(props.interview ? SHOW : EMPTY);
   
   // save funciton passed to form for onSave
-  function save(name, interviewer) {
-    const interview = {
-      student: name,
-      interviewer
-    };
-
-    transition(SAVING);
-
-    props.bookInterview(props.id, interview)
-    .then(() => {
-      transition(SHOW);
-    }).catch((e) => {
-      // true will replace the SAVING state in history
-      // this way we can go back properly
+  function save(name = null, interviewer = null) {
+    
+    if (!interviewer || !name) {
       transition(ERROR_SAVE, true);
-    });
+    } else {
+      const interview = {
+        student: name,
+        interviewer
+      };
+
+      transition(SAVING);
+      
+      props.bookInterview(props.id, interview)
+        .then(() => {
+          transition(SHOW);
+        }).catch((e) => {
+          // true will replace the SAVING state in history
+          // this way we can go back properly
+          transition(ERROR_SAVE, true);
+        });
+    }
   }
 
   function deleteInterview() {
