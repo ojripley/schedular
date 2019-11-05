@@ -53,7 +53,6 @@ export default function Appointment(props) {
   }
 
   function deleteInterview() {
-    console.log('time tot delete interview', props.id);
 
     transition(DELETING, true);
 
@@ -61,7 +60,6 @@ export default function Appointment(props) {
     .then(() => {
       transition(EMPTY);
     }).catch((e) => {
-      console.error(e);
       transition(ERROR_DELETE, true);
     });
   }
@@ -77,7 +75,7 @@ export default function Appointment(props) {
   }, [transition, props.interview, mode]);
 
   return (
-    <article className='appointment'>
+    <article className='appointment' data-testid="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)}  />}
       {mode === SHOW && props.interview && <Show

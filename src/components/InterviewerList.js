@@ -4,7 +4,15 @@ import InterviewerListItem from './InterviewerListItem';
 
 import 'components/InterviewerList.scss';
 
+import PropTypes from 'prop-types';
+
 export default function InterviewerList(props) {
+
+  // sets the desired types of the props for the InterviwerList object
+  InterviewerList.propTypes = {
+    value: PropTypes.number,
+    onChange: PropTypes.func.isRequired
+  };
 
   const interviewers = props.interviewers.map(interviewer => 
     <InterviewerListItem

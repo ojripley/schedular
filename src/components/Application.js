@@ -3,14 +3,17 @@ import React from 'react';
 // selectors
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from 'helpers/selectors';
 
-// components
+// style
 import "components/Application.scss";
+
+// components
 import DayList from "./DayList";
 import Appointment from "components/Appointment";
 
 // hook
 import useApplicationData from 'hooks/useApplicationData';
 
+// sets the initial state equal to the output of the hook defined in useApplicationData
 export default function Application(props) {
   const {
     state,
@@ -29,8 +32,6 @@ export default function Application(props) {
       < Appointment
         key={appointment.id}
         {...appointment} // spreaaaaad
-        // id={appointment.id}
-        // time={appointment.time}
         interview={interview}
         interviewers={interviewers}
         bookInterview={bookInterview}
@@ -38,8 +39,7 @@ export default function Application(props) {
       />
 
   )});
-
-  // everything within this return statement will be rendered. React will only rerender the parts that need to be changed however 
+ 
   return (
     <main className="layout">
       <section className="sidebar">
@@ -70,5 +70,3 @@ export default function Application(props) {
     </main>
   );
 }
-
-

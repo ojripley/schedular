@@ -8,7 +8,7 @@ export default function useVisualMode(initial) {
   return {
     mode,
     transition(newMode, replace = false) {
-      console.log(newMode);
+      // console.log(newMode);
       setHistory((prev) => {
         if (replace) {
           prev.pop();
@@ -21,14 +21,14 @@ export default function useVisualMode(initial) {
       // console.log(history[history.length - 1]);
       if (history.length > 1) {
         setHistory((prev) => {
-          console.log(prev[prev.length - 1]);
+          // console.log(prev[prev.length - 1]);
           prev.pop();
-          console.log(prev[prev.length - 1]);
+          // console.log(prev[prev.length - 1]);
           setMode(prev[prev.length - 1]);
           return prev;
         });
       } else {
-        console.log(history[0]);
+        // console.log(history[0]);
         setMode(history[0]);
       }
     }

@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public --ci",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "cypress": "cypress open -P ."
   },
   "browserslist": {
     "production": [
@@ -40,14 +41,21 @@
     "@storybook/addons": "^5.0.10",
     "@storybook/react": "^5.0.10",
     "@testing-library/jest-dom": "^4.0.0",
-    "@testing-library/react": "^8.0.7",
+    "@testing-library/react": "^8.0.9",
     "babel-loader": "^8.0.5",
+    "cypress": "^3.6.0",
     "node-sass": "^4.13.0",
+    "prop-types": "^15.7.2",
     "react-test-renderer": "^16.9.0"
   },
   "jest": {
     "watchPathIgnorePatterns": [
       "<rootDir>/node_modules/"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/reducers/constants.js"
     ]
   }
 }
