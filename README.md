@@ -1,5 +1,7 @@
 # Interview Scheduler
 
+A React based interview scheduler.
+
 ## Setup
 
 Install dependencies with `npm install`.
@@ -21,3 +23,7 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Preview
+
+!["Screenshot of landing view"](https://raw.githubusercontent.com/ojripley/tweeter/master/Screenshots/mobile-view.png)
