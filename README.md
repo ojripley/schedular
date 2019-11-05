@@ -26,4 +26,6 @@ npm run storybook
 
 ## Preview
 
-!["Screenshot of landing view"](https://raw.githubusercontent.com/ojripley/tweeter/master/Screenshots/mobile-view.png)
+!["Screenshot of landing view"](https://raw.githubusercontent.com/ojripley/schedular/master/screenshots/scheduler_landing_view.png)
+
+!["Screenshot of adding appointment"](https://raw.githubusercontent.com/ojripley/schedular/master/screenshots/scheduler_landing_view.png)
